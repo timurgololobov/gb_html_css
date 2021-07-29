@@ -33,8 +33,12 @@ li {
           align-items: center;
 }
 
+.menu_left {
+  width: 110px;
+}
+
 .menu_right {
-  max-width: 110px;
+  width: 168px;
 }
 
 ul {
@@ -44,6 +48,9 @@ ul {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .top {
@@ -61,6 +68,11 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.content_left {
+  position: relative;
+  right: 260px;
 }
 
 .banner {
@@ -98,5 +110,44 @@ bannner_three {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-top: 65px;
+}
+
+.offer_item1,
+.offer_item2,
+.offer_item3,
+.offer_item4 {
+  background-repeat: no-repeat;
+  background-position: right center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 360px;
+  height: 260px;
+}
+
+.offer_item1 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 22, 22, 0.7))), url(../img/offer1.png);
+  background-image: linear-gradient(rgba(33, 22, 22, 0.7)), url(../img/offer1.png);
+  margin-right: 30px;
+}
+
+.offer_item2 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 22, 22, 0.7))), url(../img/offer2.png);
+  background-image: linear-gradient(rgba(33, 22, 22, 0.7)), url(../img/offer2.png);
+  margin-right: 30px;
+}
+
+.offer_item3 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 22, 22, 0.7))), url(../img/offer3.png);
+  background-image: linear-gradient(rgba(33, 22, 22, 0.7)), url(../img/offer3.png);
+}
+
+.offer_item4 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 22, 22, 0.7))), url(../img/offer4.png);
+  background-image: linear-gradient(rgba(33, 22, 22, 0.7)), url(../img/offer4.png);
+  width: 1140px;
+  height: 180px;
+  margin-top: 30px;
+  margin-bottom: 96px;
 }
 /*# sourceMappingURL=style.css.map */
