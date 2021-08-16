@@ -1,0 +1,91 @@
+/* ******* стили header  ******* */ 
+
+.header-back
+    background: #222222
+
+.nav-header
+    height: 75px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    &__left
+        width: 110px
+
+    &__right
+        width: 168px
+
+    &__left,
+    &__right
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+.menu-list
+    position: relative
+    height: 75px
+    margin-top: 48px
+
+.menu-box
+    position: absolute
+    width: 232px
+    height: 764px
+    top: 50px
+    background: #FFFFFF
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+    display: none
+    flex-direction: column
+
+    .menu-list:hover &
+        display: flex
+
+.menu-button-exit
+    width: 100%
+    margin-bottom: 10px
+    margin-top: 16px
+    border: none
+    outline: none
+    background-color: #FFFFFF
+    text-align: right
+
+.menu-exit
+    padding-right: 16px
+    cursor: pointer
+
+.menu-heading
+    font-size: 14px
+    line-height: 17px
+    color: #000000
+    margin-bottom: 24px
+    margin-left: 34px
+
+    &-section
+        font-size: 14px
+        line-height: 17px
+        color: #F16D7F
+        margin-bottom: 12px
+        margin-left: 34px
+.munu-link
+    text-decoration: none
+    font-size: 14px
+    line-height: 17px
+    color: #6F6E6E
+    margin-bottom: 11px
+    margin-left: 54px
+
+/* Обозначение количества предметов в корзине */
+.shop-link
+    position: relative
+.shop-quantity
+    position: absolute
+    bottom: 20px
+    left: 20px
+.shop-el
+    width: 19px
+    height: 19px
+    padding: 2px
+    border-radius: 50%
+    text-align: center
+    font-size: 12px
+    background: $pink-color
+    color: #FFFFFF
