@@ -1,21 +1,20 @@
 /******** стили index **********/
-
-.top
+.banner-back
     background: #F1E4E6
 
-.content
-    height: 764px
+.content_banner
+    min-height: 764px
     display: flex
     justify-content: space-between
     align-items: center
-
-    &_left
-        position: relative
-        right: 260px
-
+    padding: 0 2%
+.content-left
+    position: relative
 .banner
     display: flex
-    width: 405px
+    max-width: 405px
+.content-right
+    margin: 0 auto
 
 .line
     border-left: 12px solid $pink-color
@@ -28,6 +27,8 @@
     font-size: 48px
     line-height: 58px
     color: #222222
+.banner_text
+    margin-left: 16px
 
 .banner_two
     font-size: 32px
@@ -316,3 +317,31 @@ details
 .pagination-elem
     padding-left: 10px
     text-decoration: none
+
+/* Стили страницы product */
+.slider
+    height: 500px
+
+/* Стили страницы cart */
+.cart
+    display: flex
+    justify-content: space-between
+    align-items: start
+.product-link
+    display: flex
+    justify-content: space-between
+.buttom-cart
+    display: block
+    text-decoration: none
+    font-weight: 300
+    font-size: 14px
+    line-height: 17px
+    color: #000000
+    border: 1px solid #A4A4A4
+    width: 224px
+    height: 49px
+    text-align: center
+    padding-top: 17px
+.box-buttom
+    display: flex
+    justify-content: space-between
