@@ -1,19 +1,17 @@
 /* ******* стили header  ******* */ 
 
-.header-back
-    background: #222222
-
-.nav-header
-    height: 75px
+.header-nav
+    min-height: 75px
     display: flex
     justify-content: space-between
     align-items: center
+    padding: 0 2%
 
     &__left
         width: 110px
 
     &__right
-        width: 168px
+        max-width: 168px
 
     &__left,
     &__right
@@ -21,66 +19,75 @@
         justify-content: space-between
         align-items: center
 
-.menu-list
-    position: relative
-    height: 75px
-    margin-top: 48px
+.button-menu
+    background: none
+    padding: 0
+    cursor: pointer
+    border: none
 
 .menu-box
     position: absolute
     width: 232px
-    height: 764px
-    top: 50px
+    min-height: 764px
     background: #FFFFFF
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
-    display: none
+    transition: $transition
+    padding: 16px 0px 37px 35px
+    right: 0
+    top: 75px
+    z-index: 1
+    transform: scaleY(0)
+    display: flex
     flex-direction: column
-
-    .menu-list:hover &
-        display: flex
+.menu-open
+    transform: scaleY(1)
 
 .menu-button-exit
-    width: 100%
-    margin-bottom: 10px
-    margin-top: 16px
-    border: none
-    outline: none
-    background-color: #FFFFFF
-    text-align: right
-
-.menu-exit
-    padding-right: 16px
+    background: none
     cursor: pointer
+    border: none
+    margin-bottom: 5px
+    fill: #6f6e6e
+    margin-left: auto
+    padding-right: 16px
+    & svg path
+        transition: $transition
+    &:hover svg path
+        fill: $pink-color
 
 .menu-heading
     font-size: 14px
     line-height: 17px
     color: #000000
     margin-bottom: 24px
-    margin-left: 34px
 
     &-section
         font-size: 14px
         line-height: 17px
         color: #F16D7F
         margin-bottom: 12px
-        margin-left: 34px
+        font-weight: normal
 .munu-link
     text-decoration: none
     font-size: 14px
     line-height: 17px
     color: #6F6E6E
     margin-bottom: 11px
-    margin-left: 54px
+    margin-left: 20px
 
 /* Обозначение количества предметов в корзине */
 .shop-link
     position: relative
-.shop-quantity
+    & .color-reverse-pink
+        transition: $transition
+    &:hover
+        .color-reverse-pink
+            color: $pink-color
+            background: $white-color
+.shop-el
     position: absolute
     bottom: 20px
     left: 20px
-.shop-el
     width: 19px
     height: 19px
     padding: 2px
@@ -88,4 +95,11 @@
     text-align: center
     font-size: 12px
     background: $pink-color
+    border: 1px solid $pink-color
     color: #FFFFFF
+.header__link-icon
+    margin-right: 35px
+
+@media screen and (max-width: 380px)
+    .profile, .shop-link
+        display: none

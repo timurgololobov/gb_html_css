@@ -4,40 +4,27 @@
     background-image: linear-gradient(rgba(244, 244, 244, 0.7)), url(../img/footerbackground.png)
     //filter: opacity(40%);
     background-repeat: no-repeat
-    background-position: left top
+    background-position: left bottom
     background-size: cover
 
     &-subscribe
         display: flex
-        height: 448px
+        min-height: 448px
         justify-content: space-between
         align-items: center
 
-.footer-copyright
-    background: #222224
-
-    &-info
-        display: flex
-        justify-content: space-between
-        align-items: center
-
+.foroter-autor-subscribe-left
+    padding-top: 20px
 .figure-autor
     text-align: center
     height: 225px
-    width: 360px
+    max-width: 360px
 
 .figcaption-subscribe
     font-size: 20px
     line-height: 24px
     text-align: center
     color: #222224
-
-.footer-copyright-info-right
-    display: flex
-    width: 148px
-    height: 79px
-    justify-content: space-between
-    align-items: center
 
 .foroter-autor-subscribe-right
     text-align: center
@@ -51,32 +38,66 @@
     font-size: 24px
     line-height: 167.2%
 
+.subscribe-form
+    max-width: 540px
+    display: flex
+    align-items: center
+
 .input-email
     background: #E1E1E1
     width: 256px
     height: 49px
-    border: inherit
+    border: none
+    outline: none
     color: #222224
     opacity: 0.67
     padding-left: 22px
     border-radius: 20px 0 0 20px
 
 .button-email
-    background: #F16D7F
+    background: $pink-color
     width: 100px
     height: 49px
     border: inherit
     color: #FFFFFF
     border-radius: 0 20px 20px 0
-// https://jsfiddle.net/87f0Lx6s/3/
+    transition: $transition
+    &:hover
+        background: #FFFFFF
+        color: $pink-color
+        border: 1px solid $pink-color
+
+.footer-copyright
+    background: #222224
+
+    &-info
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+.footer-copyright-info-right
+    display: flex
+    width: 148px
+    height: 79px
+    justify-content: space-between
+    align-items: center
+
 .social-icon
     background: #FFFFFF
     height: 32px
     width: 32px
+    transition: $transition
+    padding: 8px 10px 8px 10px
+    & .social-img-icon svg path
+        transition: $transition
+    &:hover
+        background: #F16D7F
+        & .social-img-icon path
+            fill: #FFFFFF
 
 .social-img-icon
-    display: block
-    padding: 8px 10px 8px 10px
+    margin-right: 7px
+    fill: black
 
 .social-link
     display: block
@@ -86,5 +107,7 @@
     font-size: 16px
     line-height: 19px
     color: #FBFBFB
-.social-icon:hover
-    background: #F16D7F
+
+@media screen and (max-width: 770px)
+    .footer-autor-subscribe
+        flex-direction: column

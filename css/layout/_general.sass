@@ -1,7 +1,40 @@
 .container
     max-width: $widht-container
     margin: 0 auto
-.link-block
+.content
+    padding: 3% 2%
+
+.link-block /* **убрать*** */
     display: block
+    transition: $transition
+    text-decoration: none
+.link-block:hover
+    color: $pink-color
+.link-icon
+    display: block
+    & svg
+        & path
+            transition: $transition
+    &:hover
+        & svg
+            & path
+                fill: $pink-color
+
+summary::-webkit-details-marker
+    display: none
+
+.color-reverse-white
+    transition: $transition
+
 .uppercase-text
     text-transform: uppercase
+
+/* ******* подложки основных макетов  ******* */ 
+.header-back
+    background: #222222
+
+ul,
+li
+    list-style-type: none
+    margin: 0
+    padding: 0
