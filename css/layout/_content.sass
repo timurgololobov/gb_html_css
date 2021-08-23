@@ -1,4 +1,6 @@
 /******** стили index **********/
+
+/******** стили баннер **********/
 .banner-back
     background: #F1E4E6
 
@@ -36,50 +38,67 @@
 .banner_three
     color: $pink-color
 
-.offer
+@media screen and (min-width: 430px) and (max-width: 770px)
+    .content-left img
+        max-height: 386px
+    .content_banner
+        min-height: 386px
+
+@media screen and (max-width: 430px)
+    .content-left img
+        display: none
+    .banner_one,
+    .banner_two,
+    .bannner_three
+        font-size: 38px
+        line-height: 46px
+    .banner_two
+        font-size: 20px
+    .content_banner
+        min-height: 386px
+
+/******** стили offer **********/
+
+.offer-top
     display: flex
-    flex-wrap: wrap
-
-    &_item1,
-    &_item2,
-    &_item3,
-    &_item4
-        margin-top: 65px
-        background-repeat: no-repeat
-        background-position: right center
-        box-sizing: border-box
-        width: 360px
-        height: 260px
+    justify-content: space-between
+.offer
+    margin-top: 65px
+    margin-bottom: 96px
+    &_item
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
         text-align: center
-        padding-top: 105px
-
-    &_item1
-        background-image: linear-gradient(rgba(33, 22, 22, 0.7)), url(../img/offer1.png)
-        margin-right: 30px
-
-    &_item2
-        background-image: linear-gradient(rgba(33, 22, 22, 0.7)), url(../img/offer2.png)
-        margin-right: 30px
-
-    &_item3
-        background-image: linear-gradient(rgba(33, 22, 22, 0.7)), url(../img/offer3.png)
-
-    &_item4
-        background-image: linear-gradient(rgba(33, 22, 22, 0.7)), url(../img/offer4.png)
-        width: 1140px
-        height: 180px
-        margin-top: 30px
-        margin-bottom: 96px
-        padding-top: 65px
+        background: linear-gradient(rgba(33, 22, 22, 0.7))
+    &_item-box
+        position: absolute
+        top: 50%
+        width: 100%
+        text-align: center
 
 .ofer_item_link
     display: block
     text-decoration: none
+    margin-bottom: 30px
+    position: relative
+    margin-right: 30px
+    transition: $transition
+    &:last-child
+        margin-right: 0
+    & img
+        width: 100%
+        height: 100%
+    &:hover .offer_item
+        background: linear-gradient(rgba(0, 0, 0, 0))
 
-.offer_item1_text
+.ofer_item_link_long
+    width: 100%
+
+.offer_item_text
     font-size: 16px
     line-height: 19px
-    //    padding-top: 105px;
     color: #FFFFFF
 
 .offer_heading
@@ -87,8 +106,34 @@
     line-height: 28px
     color: $pink-color
 
-.products
-    margin-bottom: 95px
+@media screen and (min-width: 430px) and (max-width: 770px)
+    .offer_item-box
+        top: 20%
+@media screen and (max-width: 430px)
+    .offer-top
+        flex-wrap: wrap
+    .ofer_item_link
+        width: 100%
+        margin-right: 0
+    .ofer_item_link_long
+        & .offer_item-box
+            top: 10%
+//
+//
+// .ofer_item1
+//     width: 300px
+//     background-image: linear-gradient(rgba(33, 22, 22, 0.7)), url(../img/offer1.png)
+//     background-size: 100% auto cover
+//     background-repeat: no-repeat
+//     background-position: center
+// для hover и другие комментарии и медиа
+//     filter: brightness(50%)
+//
+    // flex-wrap: wrap
+//        background-image: linear-gradient(rgba(33, 22, 22, 0.7)), url(../img/offer1.png)
+// background: linear-gradient( 0deg, #060608 38%, rgba(241, 109, 127, 0.93041) 100%)
+
+/* ***стили блока продуктов *** */
 
 .product-header
     text-align: center
@@ -107,14 +152,11 @@
     display: flex
     justify-content: space-between
     flex-wrap: wrap
+    padding-top: 0
     margin-bottom: 63px
 
-.product-link
-    display: block
-    text-decoration: none
-
 .product-card
-    width: 360px
+    width: 32%
     margin-top: 47px
     position: relative
     background: #F8F8F8
@@ -174,6 +216,7 @@
     display: block
     text-decoration: none
     text-align: center
+    margin-bottom: 95px
 
 .product-button
     background: $pink-color
@@ -192,17 +235,32 @@
 .add:hover
     box-shadow: 0 0 10px #FFFFFF
 
+@media screen and (min-width: 430px) and (max-width: 770px)
+    .product-card
+        width: 48%
+@media screen and (max-width: 430px)
+    .product-card
+        width: 100%
+
+// 
+// 
+// 
+// 
+/* *** стили области feature ***  */
+
 .feature
     background: #222224
 
     &-items
         display: flex
-        height: 341px
+        min-height: 341px
         align-items: center
+        padding-bottom: 100px
 
     &-item-delivery
-        width: 360px
+        max-width: 360px
         text-align: center
+        padding: 1%
 
     &-heading
         font-size: 19.96px
@@ -217,10 +275,19 @@
         line-height: 17px
         color: #FBFBFB
 
+@media screen and (max-width: 770px)
+    .feature-items
+        flex-direction: column
+
+// 
+// 
+// 
+// 
+// 
 /* Стили страницы каталога */
 .breadcrump-back
     background: #F8F3F4
-.nav-breadcrump
+.breadcrump-nav
     display: flex
     justify-content: space-between
     align-items: center
@@ -238,19 +305,161 @@
     font-size: 14px
     line-height: 17px
     color: #636363
-    padding-left: 5px
+    transition: $transition
+    &:hover
+        color: $pink-color
+.text-link-catalog:after
+    padding: 5px
+    color: #636363
+    content: "/"
+
 .text-pink
     color: $pink-color
+    font-weight: 300
+    font-size: 14px
+    line-height: 17px
     font-weight: bold
 
-.filter
+// 
+// 
+// 
+// 
+// 
+
+.filter-bag
+    margin-top: 50px
+    margin-bottom: 50px
+    display: flex
+.filter-temp
+    display: flex
+.filter_inner
+    display: flex
+
+.clothing_filter
+    margin-right: 325px
+
+.filter_details-wrap
+    position: absolute
+    z-index: 10
+    padding: 25px 15px 15px 25px
+    background-color: #fff
+    box-shadow: 0px 0px 10px $pink-color
+
+.main_filter
+    width: 355px
+
+.filter_item_title
+    color: #6f6e6e
+    text-transform: uppercase
+    font-size: 14px
+    line-height: 17px
+    border-left: 5px solid $pink-color
+    border-bottom: 1px solid #ebebeb
+    padding: 10px
+    cursor: pointer
+    transition: 0.3s
+
+.filter_item_title:hover
+    color: $pink-color
+
+.filter_list_inner[open] > .filter_item_title
+    color: $pink-color
+
+.filter_list
+    padding: 24px 12px
+
+.filter_item-link
+    text-decoration: none
+    color: #6f6e6e
+    background: transparent
+    border: none
+    font-size: 14px
+    line-height: 17px
+    font-weight: 400
+    text-transform: capitalize
+    transition: 0.2s
+
+.filter_item-link:hover
+    color: $pink-color
+
+.filter_item
+    margin-bottom: 11px
+
+.filter_details_heading
+    margin-right: 35px
+
+.filter_details_wrap
+    position: relative
+    z-index: 12
+    cursor: pointer
+    display: flex
+    align-items: center
+
+.filter_details_wrap:hover
+    color: $pink-color
+    transition: $transition
+
+.filter_title
+    font-weight: 700
+    margin-right: 10px
+
+.filter_other_title
+    font-weight: normal
+    margin-right: 10px
+    color: #6f6e6e
+
+.filter_other_title:hover
+    color: $pink-color
+    transition: $transition
+
+.filter_details_wrap:hover .filter_icon
+    fill: $pink-color
+    transition: $transition
+
+.filter_details_wrap svg
+    fill: #000
+
+.size_filter
+    padding: 7px 30px 0px 9px
+
+.filter_details-wrap
+    position: absolute
+    z-index: 10
+    padding: 25px 15px 15px 25px
+    background-color: #fff
+    box-shadow: 0px 0px 10px $pink-color
+
+.filter-details_item
+    margin-bottom: 18px
+
+.size_input
+    margin-right: 9px
+
+label:hover
+    color: $pink-color
+
+.btn_menu_filter_button
+    border: none
+    margin: 3px 3px 3px 0px
     display: flex
     justify-content: center
-    margin-top: 51px
-    margin-bottom: 17px
-.filter-left
-    display: flex
-    flex-grow: 4
+    width: 100%
+    background: transparent
+
+.btn_menu_filter_button:hover input
+    color: white
+    background-color: $pink-color
+    border-radius: 5px
+    transform: scale(1.3)
+    cursor: pointer
+    transition: $transition
+// 
+// 
+// 
+// 
+// 
+// 
+
 .menu-hight
     position: absolute
     display: none
@@ -265,8 +474,6 @@
 .filter-center
     display: flex
     flex-grow: 5
-summary::-webkit-details-marker
-    display: none
 .tempt1::after
     font-size: 14px
     line-height: 17px
@@ -291,9 +498,9 @@ summary::-webkit-details-marker
     width: 70px
 .temp3
     width: 80px
-details
-    position: absolute
-    z-index: 1
+// details
+//     position: absolute
+//     z-index: 1
 
 .filter-size
     display: flex
@@ -305,13 +512,46 @@ details
     background: #FFFFFF
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
 
+@media screen and ( max-width: 380px)
+    .breadcrump-nav
+        flex-direction: column
+
+// 
+// 
+// 
+// 
+// 
+// 
+/* стили pagination */
+
 .pagination-bag .container
     display: flex
     justify-content: center
 .pagination
-    width: 284px
-    height: 44px
-    color: #C4C4C4
+    display: inline-block
+    border: 1px solid #c4c4c4
+    border-radius: 5px
+.pagination a:hover
+    color: white
+    background: $pink-color
+    border-radius: 10px
+    transition: background 0.2s linear
+.pagination a.active:hover
+    color: white
+    background: $pink-color
+    border-radius: 10px
+    transition: background 0.2s linear
+.pagination a
+    color: #c4c4c4
+    float: left
+    padding: 12px 16px
+    text-decoration: none
+.pagination_arrows path
+    fill: #000
+
+.pagination a.active
+    color: $pink-color
+    border-radius: 5px
 .pag-red
     color: $pink-color
 .pagination-elem
@@ -345,3 +585,367 @@ details
 .box-buttom
     display: flex
     justify-content: space-between
+// 
+// 
+// 
+// 
+// 
+/* Стили страницы product description */
+.product_box
+    border: 1px solid #eaeaea
+    margin-bottom: 130px
+    margin-top: 10px
+.product_info
+    text-align: center
+
+.product_info_text_full
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.product_info h3
+    font-size: 14px
+    color: $pink-color
+    margin-bottom: 12px
+    margin-top: 60px
+    font-weight: 300
+
+.product_info_img
+    margin-bottom: 12px
+
+.product_info h2
+    font-weight: 300
+    font-size: 18px
+    color: #4d4d4d
+    margin-bottom: 48px
+
+.product_info p
+    font-weight: 300
+    font-size: 14px
+    line-height: 17px
+    text-align: center
+    color: #5e5e5e
+    margin-bottom: 2px
+
+.product_info p:last-child
+    margin-bottom: 32px
+
+.product_info_text_price
+    font-weight: 300
+    font-size: 24px
+    line-height: 29px
+    color: $pink-color
+
+.border_grey
+    border: 1px solid #eaeaea
+    margin-top: 65px
+    margin-bottom: 65px
+    margin-left: 250px
+    margin-right: 250px
+.product_filter_position
+    display: flex
+    justify-content: center
+    width: 100%
+.product_button
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-top: 48px
+    margin-bottom: 65px
+.product_button_link
+    font-size: 16px
+    text-decoration: none
+    padding: 15px 39px
+    color: $pink-color
+    border: 1px solid $pink-color
+    cursor: pointer
+    transition: $transition
+    display: flex
+    align-items: center
+    &:hover
+        background: $pink-color
+        transform: scale(1.2)
+.product_button_image
+    margin-right: 20px
+    fill: $pink-color
+.product_button:hover .product_button_image
+    fill: white
+    transition: $transition
+.product_button_text
+    font-size: 16px
+    line-height: 19px
+    color: $pink-color
+.product_button:hover .product_button_text
+    color: white
+    transition: $transition
+
+// 
+// 
+/* Стили страницы cart */
+.product-card-column
+    display: flex
+    flex-direction: column
+.product-card-cart
+    width: 100%
+.img-product-edit
+    width: 62%
+.link-block-cart
+    display: flex
+    flex-direction: row
+.shopping_content_item_info
+    font-size: 22px
+    line-height: 26px
+    color: #575757
+    font-weight: 400
+.shopping_content_item_info p
+    margin-bottom: 6px
+.shopping_content_item_info p:hover
+    transform: scale(1.05)
+    transition: scale 0.2s linear
+    cursor: pointer
+.shopping_content_item_info_input
+    font-size: 20px
+    color: $pink-color
+    outline: none
+    margin-left: 25px
+.shopping_content_item_buttons
+    display: flex
+    justify-content: space-between
+
+.shopping_content_item_button:hover
+    color: white
+    background: $pink-color
+    outline: none
+    transition: $transition
+    transform: scale(1.05)
+.shopping_content_info
+    display: flex
+    flex-direction: column
+    max-width: 35%
+    width: 100%
+    padding-top: 20px
+.shopping_content_info_title
+    font-size: 18px
+    line-height: 21px
+    color: #222
+    font-weight: 300
+    margin-bottom: 20px
+
+.shopping_content_info_input
+    height: 45px
+    width: 100%
+    margin-bottom: 20px
+    text-align: left
+    padding: 13px 17px
+
+.shopping_content_item_button
+    text-transform: uppercase
+    transition: $transition
+
+.shopping_content_info_button
+    align-self: flex-start
+    padding: 12px 15px
+    color: #4a4a4a
+    background-color: transparent
+    cursor: pointer
+    outline: 1px solid #4a4a4a
+    border: none
+    margin-bottom: 60px
+    transition: $transition
+    text-transform: uppercase
+
+.shopping_content_info_button:hover
+    color: white
+    background: $pink-color
+    outline: none
+    transition: $transition
+    transform: scale(1.05)
+
+.shopping_content_info_total
+    background: #f5f3f3
+    padding: 41px 44px
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+
+.shopping_content_info_total h3
+    font-size: 11px
+    line-height: 13px
+    color: #4a4a4a
+    font-weight: 400
+    margin-bottom: 12px
+
+.shopping_content_info_total h3 span
+    margin-left: 20px
+
+.shopping_content_info_total h4
+    font-size: 16px
+    line-height: 19px
+    color: #4a4a4a
+    font-weight: 300
+
+.shopping_content_info_total h4 span
+    font-weight: bold
+    color: $pink-color
+    margin-left: 20px
+
+.shopping_content_info_total div
+    background-color: #cacaca
+    width: 100%
+    margin-top: 21px
+    margin-bottom: 17px
+    height: 1px
+
+.shopping_content_info_total button
+    width: 100%
+    padding: 15px 20px
+    font-size: 16px
+    line-height: 19px
+    color: #fff
+    font-weight: 300
+    border: none
+    cursor: pointer
+    transition: $transition
+    background-color: transparent
+    outline: 1px solid #4a4a4a
+    color: #4a4a4a
+
+.shopping_content_info_total button:hover
+    color: white
+    background: $pink-color
+    outline: none
+    transition: $transition
+    transform: scale(1.05)
+
+// 
+// 
+// 
+/* Стили страницы registration */
+
+.registr
+    padding-top: 65px
+    padding-bottom: 96px
+    display: flex
+    justify-content: space-between
+
+.registr_form
+    max-width: 360px
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+.registr_form_title
+    font-weight: 300
+    font-size: 16px
+    line-height: 19px
+    color: #222222
+    margin-bottom: 20px
+
+.registr_info_input
+    width: 100%
+    height: 45px
+    margin-bottom: 20px
+    text-align: left
+    padding: 13px 17px
+
+.registr_form_radio
+    display: flex
+    align-items: center
+    margin-top: 20px
+    margin-bottom: 33px
+
+.registr_form_radio input
+    margin-right: 10px
+
+.registr_form_radio label
+    margin-right: 20px
+    font-size: 13px
+    line-height: 16px
+    color: #000
+    font-weight: 300
+
+.registr_form_radio_other
+    display: none
+
+.registr_form p
+    font-size: 13px
+    line-height: 16px
+    color: #b1b1b1
+    font-weight: 300
+    margin-bottom: 40px
+
+.registr_content
+    max-width: 53%
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+
+.registr_content h3
+    font-size: 24px
+    line-height: 29px
+    color: #000
+    font-weight: 300
+    text-transform: capitalize
+    margin-bottom: 22px
+
+.registr_content p
+    font-size: 24px
+    line-height: 29px
+    color: #000
+    font-weight: 300
+    margin-bottom: 21px
+
+.registr_content ul
+    font-size: 24px
+    line-height: 29px
+    color: #000
+    font-weight: 300
+
+ul,
+li
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+.registr_content ul li
+    display: flex
+    margin-bottom: 15px
+
+.registr_content ul li:before
+    content: url(/photo/registration/arrow_regist.svg)
+    display: block
+    margin-right: 23px
+
+.registr_content ul li:hover
+    transition: $transition
+    transform: scale(1.05)
+    cursor: pointer
+
+.registr_form_button
+    padding: 17px 29px
+    border: 1px solid white
+    background-color: #222222
+    font-size: 14px
+    line-height: 17px
+    color: #fff
+    font-weight: 400
+    cursor: pointer
+    transition: $transition
+
+.registr_form_button svg
+    fill: white
+    margin-left: 20px
+
+.registr_form_button:hover svg
+    fill: #000
+    transition: $transition
+
+.registr_form_button:hover
+    color: #000
+    background-color: white
+    border: 1px solid #000
+    transition: $transition
+    transform: scale(1.05)

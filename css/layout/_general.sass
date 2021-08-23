@@ -7,6 +7,7 @@
 .link-block /* **убрать*** */
     display: block
     transition: $transition
+    text-decoration: none
 .link-block:hover
     color: $pink-color
 .link-icon
@@ -19,6 +20,9 @@
             & path
                 fill: $pink-color
 
+summary::-webkit-details-marker
+    display: none
+
 .color-reverse-white
     transition: $transition
 
@@ -28,3 +32,9 @@
 /* ******* подложки основных макетов  ******* */ 
 .header-back
     background: #222222
+
+ul,
+li
+    list-style-type: none
+    margin: 0
+    padding: 0

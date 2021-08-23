@@ -1,10 +1,11 @@
 /* ******* стили header  ******* */ 
 
-.nav-header
-    height: 75px
+.header-nav
+    min-height: 75px
     display: flex
     justify-content: space-between
     align-items: center
+    padding: 0 2%
 
     &__left
         width: 110px
@@ -24,17 +25,13 @@
     cursor: pointer
     border: none
 
-.menu-list
-    height: 75px
-    margin-top: 48px
-
 .menu-box
     position: absolute
     width: 232px
     min-height: 764px
     background: #FFFFFF
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
-    transition: transform 0.3s linear
+    transition: $transition
     padding: 16px 0px 37px 35px
     right: 0
     top: 75px
@@ -50,10 +47,13 @@
     cursor: pointer
     border: none
     margin-bottom: 5px
-    transition: $transition
     fill: #6f6e6e
     margin-left: auto
     padding-right: 16px
+    & svg path
+        transition: $transition
+    &:hover svg path
+        fill: $pink-color
 
 .menu-heading
     font-size: 14px
@@ -99,6 +99,7 @@
     color: #FFFFFF
 .header__link-icon
     margin-right: 35px
+
 @media screen and (max-width: 380px)
     .profile, .shop-link
         display: none
